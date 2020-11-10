@@ -23,9 +23,9 @@ jobs:
           
           switches: -avzr --delete
           path: jenkins/
-          remote_path: /home/ubuntu/testdeploy
-          remote_user: root
-          remote_host: 149.81.166.9
+          remote_path: ${{secrets.REMOTE_TARGET}}
+          remote_user: ${{secrets.REMOTE_USER}}
+          remote_host: ${{secrets.REMOTE_HOST}}
           remote_key: ${{ secrets.SERVER_SSH_KEY }}
           
           
