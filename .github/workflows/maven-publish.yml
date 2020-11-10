@@ -15,17 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+    - uses: actions/checkout@v2
     - name: Deploy to Server
       #uses: easingthemes/ssh-deploy@v2.1.5
       uses: burnett01/rsync-deployments@4.1
       env:
           
           switches: -avzr --delete
-          path: "/"
-          remote_path: "/home/ubuntu/testdeploy"
-          remote_user: "root"
-          remote_host: "149.81.166.9"
+          path: jenkins/
+          remote_path: /home/ubuntu/testdeploy
+          remote_user: root
+          remote_host: 149.81.166.9
           remote_key: ${{ secrets.SERVER_SSH_KEY }}
           
           
